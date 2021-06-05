@@ -11,7 +11,7 @@ public class personalAccount extends base{
         PageFactory.initElements(Driver.get(),this);
     }
 
-    @FindBy(xpath = "//span[contains(text(),'My personal information')]")
+    @FindBy(xpath = "//a[@title=\"Information\"]")
     public WebElement personalInfo;
 
     @FindBy(xpath = "//input[@id='firstname']")

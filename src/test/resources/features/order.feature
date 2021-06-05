@@ -1,5 +1,5 @@
 Feature: Users should be able to order a t-shirt
-
+  @wip
 
   Scenario: the user orders a t-shirt
     Given the user is on the Mystore page
@@ -15,7 +15,7 @@ Feature: Users should be able to order a t-shirt
     Then the user select the payment option
     Then the user confirms the order
     Then the user views to confirmation page
-
+  @wip
   Scenario: the user confirms the order from order history
     When the user logs in with valid credentials
     Then the user navigates to personal account

@@ -9,13 +9,15 @@ import org.junit.Assert;
 public class personal_details_step_defs {
 
     @And("the use navigates to my personal information page")
-    public void theUseNavigatesToMyPersonalInformationPage() {
+    public void theUseNavigatesToMyPersonalInformationPage() throws InterruptedException {
+        Thread.sleep(1000);
         new personalAccount().personalInfo.click();
     }
 
     @Then("the user updates name")
     public void the_user_updates_name() {
         personalAccount PA= new personalAccount();
+        PA.name.clear();
         PA.name.sendKeys("newname");
         PA.password.sendKeys(ConfigurationReader.get("password"));
         PA.saveButton.click();

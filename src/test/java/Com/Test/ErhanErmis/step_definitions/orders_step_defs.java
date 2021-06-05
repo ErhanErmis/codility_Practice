@@ -1,15 +1,12 @@
 package Com.Test.ErhanErmis.step_definitions;
 
 import Com.Test.ErhanErmis.pages.order;
-import Com.Test.ErhanErmis.utilities.BrowserUtils;
 import Com.Test.ErhanErmis.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
-
-import java.sql.SQLOutput;
 
 public class orders_step_defs {
 String refNum= "";
@@ -25,10 +22,8 @@ new order().tShirt.click();
 
     @Then("the user selects a t-shirt")
     public void the_user_selects_a_t_shirt() {
-        BrowserUtils.waitFor(3);
-        JavascriptExecutor JSE = (JavascriptExecutor)Driver.get();
+      JavascriptExecutor JSE = (JavascriptExecutor)Driver.get();
         JSE.executeScript("arguments[0].scrollIntoView(true);",new order().tShirtImage);
-        BrowserUtils.waitFor(3);
         new Actions(Driver.get()).moveToElement(new order().tShirtImage).perform();
         new order().daddtocart.click();
     }
@@ -41,7 +36,6 @@ new order().tShirt.click();
 
     @Then("the user clicks on proceed to checkout button at the pop up screen")
     public void the_user_clicks_on_proceed_to_checkout_button_at_the_pop_up_screen() {
-        BrowserUtils.waitFor(3);
         new order().popup.click();
     }
 
@@ -68,7 +62,7 @@ new order().tShirt.click();
     @Then("the user select the payment option")
     public void the_user_select_the_payment_option() {
         new order().payment.click();
-        BrowserUtils.waitFor(3);
+
     }
     @Then("the user confirms the order")
     public void theUserConfirmsTheOrder() {
